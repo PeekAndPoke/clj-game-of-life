@@ -82,7 +82,7 @@
 (defn- line-to-string [line]
   (apply str (map #(if (= 0 %) "." "o") line)))
 
-(defn- ^:private board-to-string [lines]
+(defn- board-to-string [lines]
   (str/join "\n" (map line-to-string lines)))
 
 (def ^:private current (atom initial))
