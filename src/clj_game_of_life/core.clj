@@ -5,5 +5,5 @@
 (defn -main []
   (println "Hello Game Of Life!")
   ;; Run the GoL for 500 generations with 25 ms of sleep time in between
-  (gol/run 500 25)
+  (gol/run 20 25)
   (println "ByeBye Game Of Life!"))
