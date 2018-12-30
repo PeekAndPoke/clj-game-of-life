@@ -1,5 +1,7 @@
 (ns clj-game-of-life.patterns)
 
+;; Stills
+
 (def still-block [[1 1]
                   [1 1]])
 
@@ -12,6 +14,14 @@
                  [0 1 0 1]
                  [0 0 1 0]])
 
+;; Oscillators
+
+(def osci-blinker [[0 0 0]
+                   [1 1 1]
+                   [0 0 0]])
+
+;; Spaceships
+
 (def ss-glider-tl2br [[0 1 0]
                       [0 0 1]
                       [1 1 1]])
@@ -19,6 +29,8 @@
 (def ss-glider-tr2bl [[0 1 0]
                       [1 0 0]
                       [1 1 1]])
+
+;; Canons
 
 (def cosper-glider-gun [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
                         [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]

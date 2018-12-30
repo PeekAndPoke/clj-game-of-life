@@ -18,17 +18,17 @@
     (or (= 3 alive-neighbors)
         (and (= 2 alive-neighbors) (= 1 (is-alive? field x y))))))
 
-(defn- next-generation [field x y]
+(defn- cell-next-generation [field x y]
   (if (lives-in-next-generation field x y) 1 0))
 
-(defn- next-step [field]
+(defn next-gen [field]
   ; Make sure we have a vector, as we need random access to the elements. This is not possible with lists.
   (to-vectors
     ; Iterate the rows
     (map-indexed
       (fn [idr row]
         ; Iterate the columns and calculate the next generation of every cell
-        (map-indexed (fn [idc _] (next-generation field idc idr)) row))
+        (map-indexed (fn [idc _] (cell-next-generation field idc idr)) row))
       field)))
 
 (defn- line-to-string [line]
@@ -73,7 +73,7 @@
                ; Print the board
                (println output)
                ; Calculate the next step and set it on current. How does this work exactly?
-               (swap! current next-step)
+               (swap! current next-gen)
                ; Wait a moment
                (Thread/sleep sleepMs))
              )))
